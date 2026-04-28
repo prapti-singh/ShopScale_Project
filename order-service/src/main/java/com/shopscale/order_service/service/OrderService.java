@@ -15,12 +15,16 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 
 public class OrderService {
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
+
+    public OrderService(OrderRepository orderRepository, WebClient.Builder webClientBuilder){
+        this.orderRepository = orderRepository;
+        this.webClientBuilder = webClientBuilder;
+    }
    
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();

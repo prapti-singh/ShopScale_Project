@@ -13,6 +13,7 @@ public class OrderServiceApplication {
         SpringApplication.run(OrderServiceApplication.class,args);
     }
     @Bean
+    
     public WebClient.Builder webClientBuilder(){
         return WebClient.builder();
     }
